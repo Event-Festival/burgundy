@@ -1,0 +1,104 @@
+.halloween {
+	overflow: hidden;
+
+	.halloween_bat {
+		.bat {
+			position: absolute;
+			width: 40px;
+			z-index: 1;
+			animation: float 4s ease-in-out infinite;
+		}
+
+		.bat1 {
+			left: 200px;
+			width: 30px;
+			animation-delay: 1s;
+		}
+
+		.bat2 {
+			left: 300px;
+			animation-delay: 2s;
+		}
+
+		.bat3 {
+			left: 400px;
+			width: 30px;
+			top: -9px;
+		}
+
+		.bat4 {
+			left: 500px;
+			top: 5px;
+			width: 20px;
+			animation-delay: 1s;
+		}
+
+		.bat5 {
+			right: 15px;
+			width: 20px;
+		}
+
+		.bat7 {
+			right: 100px;
+			width: 30px;
+			animation-delay: 3s;
+		}
+
+		.spider {
+			width: 370px;
+			position: absolute;
+			top: -50px;
+			left: -50px;
+			z-index: 1;
+		}
+	}
+
+	.halloween_bg {
+		position: absolute;
+		opacity: 0.09;
+		bottom: 0;
+		z-index: -1000;
+	}
+
+	
+	.halloween_home {
+		width: 50px;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		z-index: -1000;
+		overflow: hidden;
+	}
+
+	.halloween_bt {
+		width: 50px;
+		height: 85px;
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		z-index: 1;
+		overflow: hidden;
+	}
+	.curve {
+		position: absolute;
+		width: 50px;
+		bottom: 0;
+		right: 0;
+		z-index: 1;
+		animation: float 4s ease-in-out infinite;
+	}
+}
+
+@keyframes float {
+	0% {
+		transform: translateY(10px);
+	}
+
+	50% {
+		transform: translateY(0px);
+	}
+
+	100% {
+		transform: translateY(10px);
+	}
+}

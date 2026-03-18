@@ -1,0 +1,91 @@
+.valentine {
+    overflow: hidden;
+
+    .valentine_heart {
+        .heart {
+            position: absolute;
+            width: 40px;
+            z-index: 1;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .heart1 {
+            left: 200px;
+            width: 30px;
+            animation-delay: 1s;
+        }
+
+        .heart2 {
+            left: 300px;
+            animation-delay: 2s;
+        }
+
+        .heart3 {
+            left: 400px;
+            width: 30px;
+            top: -9px;
+        }
+
+        .heart4 {
+            left: 500px;
+            top: 5px;
+            width: 20px;
+            animation-delay: 1s;
+        }
+
+        .heart5 {
+            right: 15px;
+            width: 20px;
+        }
+
+        .heart7 {
+            right: 100px;
+            width: 30px;
+            animation-delay: 3s;
+        }
+
+        .spider {
+            width: 370px;
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            z-index: 1;
+        }
+    }
+
+    .valentine_bg {
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        z-index: -1000;
+        opacity: 0.1;
+    }
+
+    .valentine_home {
+        width: 50px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: -1000;
+        overflow: hidden;
+    }
+
+    .valentine_bt {
+        width: 50px;
+        height: 85px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: 1;
+        overflow: hidden;
+    }
+
+    .curve {
+        position: absolute;
+        width: 50px;
+        bottom: 16px;
+        right: 0;
+        z-index: 1;
+        animation: float 4s ease-in-out infinite;
+    }
+}

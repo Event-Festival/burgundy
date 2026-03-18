@@ -1,0 +1,292 @@
+.songkran {
+    .songkran-top {
+        .person {
+            position: absolute;
+            width: 15px;
+            top: calc(54px + var(--coll3));
+            left: calc(48px + var(--coll1));
+            z-index: 1;
+            transition: all 0.5s;
+            transform: rotate(43deg) rotateY(180deg);
+        }
+
+        .umbrella {
+            position: absolute;
+            width: 25px;
+            bottom: 95px;
+            left: 27px;
+            z-index: 2;
+            transition: all 0.5s;
+            transform: rotate(319deg) rotateY(180deg);
+        }
+
+        .greeting-text {
+            position: absolute;
+            white-space: nowrap;
+            top: 25px;
+            right: 390px;
+            z-index: 1;
+
+            .typewriter-text {
+                font-family: 'Courier Prime', 'Courier New', monospace;
+                font-weight: 700;
+                font-size: 18px;
+                letter-spacing: 0.1em;
+
+                span {
+                    display: inline-block;
+                    opacity: 0;
+                    transform: translateY(8px);
+                    animation: fadeInChar 0.5s ease forwards;
+                }
+            }
+
+            .cursor-blink {
+                display: inline-block;
+                width: 2px;
+                height: 14px;
+                background: #D85A30;
+                vertical-align: middle;
+                margin-left: 2px;
+                border-radius: 1px;
+                animation: cursorFade 1.2s ease-in-out infinite;
+            }
+        }
+
+        .decoration {
+            position: absolute;
+            top: 5px;
+            width: 150px;
+            z-index: 1;
+            transition: all 0.5s;
+        }
+
+        .decoration-1 {
+            left: calc(240px + var(--coll2));
+        }
+
+        .decoration-2 {
+            left: calc(390px + var(--coll2));
+            transform: rotate(15deg);
+        }
+
+        .decoration-3 {
+            left: calc(380px + var(--coll2));
+            width: 25px;
+        }
+
+        .decoration-4 {
+            top: 25px;
+            left: calc(321px + var(--coll2));
+            animation: floatUpDown 3s ease-in-out infinite;
+        }
+
+        .splash-item-1 {
+            position: absolute;
+            right: 365px;
+            top: 20px;
+            width: 20px;
+            z-index: 1;
+            transition: all 0.5s;
+        }
+
+        .splash-item-2 {
+            position: absolute;
+            right: 90px;
+            top: 25px;
+            width: 30px;
+            z-index: 1;
+            transition: all 0.5s;
+        }
+
+        .splash-item-3 {
+            position: absolute;
+            right: 74px;
+            top: 30px;
+            width: 23px;
+            z-index: 1;
+            transition: all 0.5s;
+            transform: rotate(239deg) scaleY(-1);
+        }
+    }
+
+    .scenery-bottom {
+        width: 300px;
+        height: 85px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: 1;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: scaleX(-1);
+        }
+    }
+
+    .sand {
+        position: absolute;
+        z-index: 1;
+        width: 120px;
+        height: 60px;
+        bottom: 0;
+        left: calc(85px + var(--coll2));
+        transition: all 0.5s;
+    }
+
+    .water-gun {
+        position: absolute;
+        z-index: 1;
+        width: 50px;
+        bottom: 0;
+        left: calc(200px + var(--coll2));
+        transition: all 0.5s;
+    }
+
+    .coconut {
+        width: 30px;
+        height: 40px;
+        position: absolute;
+        bottom: 0;
+        right: 290px;
+        z-index: 1;
+        overflow: hidden;
+    }
+
+    .water-drop {
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        bottom: 40px;
+        right: 60px;
+        z-index: 1;
+        animation: waterFlow 4s ease-in-out infinite;
+        animation-delay: -1s;
+    }
+
+    .water-drop-2 {
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        bottom: 20px;
+        right: 70px;
+        z-index: 1;
+        animation: waterFlow2 4s ease-in-out infinite;
+        animation-delay: -1s;
+    }
+}
+
+@keyframes wipwip {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes cursorFade {
+    0% {
+        opacity: 1;
+        transform: scaleY(1);
+    }
+
+    40% {
+        opacity: 0.1;
+        transform: scaleY(0.8);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scaleY(1);
+    }
+}
+
+@keyframes fadeInChar {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes waterFlow {
+    0% {
+        transform: translateX(0);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: translateX(-180px);
+        opacity: 0;
+    }
+}
+
+@keyframes waterFlow2 {
+    0% {
+        transform: scaleY(-1) rotate(-30deg) translateX(0);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scaleY(-1) rotate(10deg) translateX(-100px);
+        opacity: 0;
+    }
+}
+
+@keyframes floatUpDown {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(8px); }
+    100% { transform: translateY(0); }
+}
+
+@media only screen and (max-width: 1140px) {
+    .songkran {
+        .songkran-top {
+            .decoration-2 {
+                width: 0;
+            }
+
+            .decoration-4 {
+                width: 0;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 940px) {
+    .songkran {
+        .songkran-top {
+            .decoration-1 {
+                width: 0;
+            }
+
+            .decoration-3 {
+                width: 0;
+            }
+        }
+    }
+}
