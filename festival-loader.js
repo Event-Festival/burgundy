@@ -1,5 +1,10 @@
 (function () {
-  const CONFIG_URL = 'https://event-festival.github.io/burgundy/theme-config.json';
+  const isDev = location.hostname === 'localhost';
+
+  const CONFIG_URL =
+    isDev && window.FESTIVAL_CONFIG_URL
+      ? window.FESTIVAL_CONFIG_URL
+      : 'https://event-festival.github.io/burgundy/theme-config.json';
 
   function loadCSS(href) {
     if (document.querySelector(`link[href="${href}"]`)) return;
