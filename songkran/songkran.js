@@ -5,6 +5,7 @@
 
   const container = document.createElement('div');
   container.className = 'songkran';
+  container.setAttribute('data-festival-theme', 'songkran');
 
   const top = document.createElement('div');
   top.className = 'songkran-top';

@@ -4,6 +4,7 @@
 
   const section = document.createElement('section');
   section.className = 'snow';
+  section.setAttribute('data-festival-theme', 'snow');
 
   const flakes = [
     'far', 'far', 'far', 'far', 'far',

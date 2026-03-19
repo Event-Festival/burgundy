@@ -6,6 +6,7 @@
 
   const bgWrapper = document.createElement('div');
   bgWrapper.style.overflow = 'hidden';
+  bgWrapper.setAttribute('data-festival-theme', 'loy-krathong');
   bgWrapper.style.width = '100vw';
 
   const bg = document.createElement('img');

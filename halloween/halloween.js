@@ -6,6 +6,7 @@
 
   const container = document.createElement('div');
   container.className = 'halloween';
+  container.setAttribute('data-festival-theme', 'halloween');
 
   const batContainer = document.createElement('div');
   batContainer.className = 'halloween_bat';

@@ -6,6 +6,7 @@
 
   const canvas = document.createElement('canvas');
   canvas.className = 'canvas-new-year';
+  canvas.setAttribute('data-festival-theme', 'canvas-new-year');
   document.body.appendChild(canvas);
 
   const ctx = canvas.getContext('2d');

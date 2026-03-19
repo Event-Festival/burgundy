@@ -1,0 +1,21 @@
+:root.expanded {
+  --coll1: 20px;
+  --coll2: 170px;
+  --coll3: 5px;
+}
+
+:root.collapsed {
+  --coll1: 0px;
+  --coll2: 0px;
+  --coll3: 0px;
+}
+
+.sm-hide {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .sm-hide {
+    display: none !important;
+  }
+}

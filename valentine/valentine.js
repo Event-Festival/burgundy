@@ -6,6 +6,7 @@
 
   const section = document.createElement('div');
   section.className = 'valentine';
+  section.setAttribute('data-festival-theme', 'valentine');
 
   const heartContainer = document.createElement('div');
   heartContainer.className = 'valentine_heart';

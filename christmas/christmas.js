@@ -6,6 +6,7 @@
 
   const section = document.createElement('div');
   section.className = 'christmas';
+  container.setAttribute('data-festival-theme', 'christmas');
 
   const top = document.createElement('div');
   top.className = 'christmas_top';
