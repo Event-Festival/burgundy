@@ -1,5 +1,5 @@
 (function () {
-  const CONFIG_URL = 'https://event-festival.github.io/burgundy/festival.json';
+  const CONFIG_URL = 'https://event-festival.github.io/burgundy/theme-config.json';
 
   function loadCSS(href) {
     if (document.querySelector(`link[href="${href}"]`)) return;
