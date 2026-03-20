@@ -1,19 +1,11 @@
 (function createSongkranEffect() {
-  if (document.querySelector('[data-festival-theme="songkran"]')) return;
+  if (document.querySelector('.songkran')) return;
 
   const BASE_URL = 'https://event-festival.github.io/burgundy/assets/festivals/songkran/';
 
-  const root = document.createElement('div');
-  root.setAttribute('data-festival-theme', 'songkran');
-  root.style.position = 'fixed';
-  root.style.top = '0';
-  root.style.left = '0';
-  root.style.width = '100%';
-  root.style.pointerEvents = 'none';
-  root.style.zIndex = '9999';
-
   const container = document.createElement('div');
   container.className = 'songkran';
+  container.setAttribute('data-festival-theme', 'songkran');
 
   const top = document.createElement('div');
   top.className = 'songkran-top';
@@ -32,7 +24,7 @@
   greeting.className = 'greeting-text sm-hide';
 
   const textEl = document.createElement('span');
-  textEl.className = 'slide-text';
+  textEl.className = 'typewriter-text';
 
   greeting.appendChild(textEl);
   top.appendChild(greeting);
@@ -59,38 +51,67 @@
   container.appendChild(gun);
   container.appendChild(coconut);
 
-  root.appendChild(container);
-  document.body.appendChild(root);
+  document.body.appendChild(container);
 
+  // ================= SLIDE TEXT =================
+  
   const thisYearAD = new Date().getFullYear();
   const thisYearBE = thisYearAD + 543;
 
   const texts = [
-    `HAPPY SONGKRAN DAY ${thisYearAD}!`,
-    `สวัสดีปีใหม่ไทย ${thisYearBE}!`
+    {
+      text: `HAPPY SONGKRAN DAY ${thisYearAD}!`,
+      colors: ['#378ADD','#1D9E75','#D85A30','#D4537E','#7F77DD','#BA7517','#639922']
+    },
+    {
+      text: `สวัสดีปีใหม่ไทย ${thisYearBE}!`,
+      colors: ['#D85A30','#D4537E','#BA7517','#639922','#378ADD','#7F77DD','#1D9E75']
+    }
   ];
 
-  let textIndex = 0;
+  function renderText(item) {
+    const fragment = document.createDocumentFragment();
+    for (let i = 0; i < item.text.length; i++) {
+      const span = document.createElement('span');
+      span.textContent = item.text[i];
+      if (item.text[i] !== ' ') {
+        span.style.color = item.colors[i % item.colors.length];
+      }
+      fragment.appendChild(span);
+    }
+    textEl.innerHTML = '';
+    textEl.appendChild(fragment);
+  }
 
-  function showText() {
-    textEl.textContent = texts[textIndex];
+  const DISPLAY_DURATION = 10000;
+  const SLIDE_OUT_DURATION = 600;
+  const BETWEEN_DELAY = 400;     
 
-    textEl.classList.remove('slide-in', 'slide-out');
+  let currentIndex = 0;
 
-    void textEl.offsetWidth;
+  function showNext() {
+    renderText(texts[currentIndex]);
 
-    textEl.classList.add('slide-in');
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        textEl.classList.remove('slide-out');
+        textEl.classList.add('slide-in');
+      });
+    });
 
     setTimeout(() => {
       textEl.classList.remove('slide-in');
       textEl.classList.add('slide-out');
-    }, 10000);
 
-    setTimeout(() => {
-      textIndex = (textIndex + 1) % texts.length;
-      showText();
-    }, 10800);
+      setTimeout(() => {
+        currentIndex = (currentIndex + 1) % texts.length;
+        textEl.classList.remove('slide-out');
+
+        setTimeout(showNext, BETWEEN_DELAY);
+      }, SLIDE_OUT_DURATION);
+
+    }, DISPLAY_DURATION);
   }
 
-  showText();
+  showNext();
 })();
