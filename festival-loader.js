@@ -8,6 +8,10 @@
 
   let loadedThemes = new Set();
 
+  const THEME_STORAGE_KEYS = {
+    'newyear': ['newYearShow'],
+  };
+
   // LocalStorage Control
 
   function isFestivalEnabled() {
@@ -114,6 +118,11 @@
         loadJS(theme.js, key);
 
         loadedThemes.add(key);
+      } else {
+        const storageKeys = THEME_STORAGE_KEYS[key];
+        if (storageKeys) {
+          storageKeys.forEach(k => localStorage.removeItem(k));
+        }
       }
     });
   }
