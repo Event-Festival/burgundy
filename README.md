@@ -7,7 +7,7 @@ A lightweight CDN-based festival theme loader for adding seasonal or event-based
 Include the Burgundy festival loader via CDN in your index.html :
 
 
-```bash
+```html
 <script src="https://event-festival.github.io/burgundy/festival-loader.js"></script>
 ```
 
@@ -16,16 +16,16 @@ Include the Burgundy festival loader via CDN in your index.html :
 After including the script, you can control the festival theme globally via the window.Festival object.
 
 ```javascript
-# 'Function for enabling themes.'
+// 'Function for enabling themes.'
 window.Festival.enable();
 
-# 'Function to disable the theme.'
+// 'Function to disable the theme.'
 window.Festival.disable();
 
-# 'Function for using length with expand.'
+// 'Function for using length with expand.'
 window.Festival.expand();
 
-# 'Function for using length with collapse.'
+// 'Function for using length with collapse.'
 window.Festival.collapse();
 
 ```
@@ -34,7 +34,7 @@ window.Festival.collapse();
 
 For local development or testing with a custom theme configuration, define the config URL before loading the script :
 
-```bash
+```html
 <script>
     window.FESTIVAL_CONFIG_URL = 'http://localhost:4200/theme-config.json';
 </script>
