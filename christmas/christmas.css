@@ -90,6 +90,7 @@
 		.item-box {
 			position: absolute;
 			right: 0;
+			top: 0;
 			width: 20px;
 			height: 60px;
 			overflow: hidden;

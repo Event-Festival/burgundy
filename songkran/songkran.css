@@ -22,38 +22,27 @@
 
         .greeting-text {
             position: absolute;
-            white-space: nowrap;
             top: 25px;
             right: 355px;
+            width: 350px;
+            overflow: hidden;
             z-index: 1;
 
-            .typewriter-text {
+            .slide-text {
+                display: inline-block;
+                white-space: nowrap;
                 font-family: 'Courier Prime', monospace;
                 font-weight: 700;
                 font-size: 18px;
                 letter-spacing: 0.1em;
-            }
 
-            .typewriter-text span {
-                display: inline-block;
-                opacity: 0;
-                transform: translateY(6px);
-                animation: fadeInChar 0.35s ease forwards;
-            }
+                &.slide-in {
+                    animation: slideIn 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+                }
 
-            .cursor-blink {
-                display: inline-block;
-                width: 2px;
-                height: 18px;
-                background: #D85A30;
-                margin-left: 4px;
-                vertical-align: bottom;
-                animation: blink 1s steps(2, start) infinite;
-            }
-
-            .cursor-blink.pause {
-                animation: none;
-                opacity: 1;
+                &.slide-out {
+                    animation: slideOut 0.8s cubic-bezier(0.5, 0, 0.75, 0) forwards;
+                }
             }
         }
 
@@ -215,8 +204,16 @@
 }
 
 @keyframes blink {
-    0%, 49% { opacity: 1; }
-    50%, 100% { opacity: 0; }
+
+    0%,
+    49% {
+        opacity: 1;
+    }
+
+    50%,
+    100% {
+        opacity: 0;
+    }
 }
 
 @keyframes fadeInChar {
@@ -277,6 +274,32 @@
 
     100% {
         transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+        filter: blur(4px);
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateX(-100%);
+        opacity: 0;
     }
 }
 
