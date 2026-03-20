@@ -54,18 +54,18 @@
   document.body.appendChild(container);
 
   // ================= SLIDE TEXT =================
-  
+
   const thisYearAD = new Date().getFullYear();
   const thisYearBE = thisYearAD + 543;
 
   const texts = [
     {
       text: `HAPPY SONGKRAN DAY ${thisYearAD}!`,
-      colors: ['#378ADD','#1D9E75','#D85A30','#D4537E','#7F77DD','#BA7517','#639922']
+      colors: ['#378ADD', '#1D9E75', '#D85A30', '#D4537E', '#7F77DD', '#BA7517', '#639922']
     },
     {
       text: `สวัสดีปีใหม่ไทย ${thisYearBE}!`,
-      colors: ['#D85A30','#D4537E','#BA7517','#639922','#378ADD','#7F77DD','#1D9E75']
+      colors: ['#D85A30', '#D4537E', '#BA7517', '#639922', '#378ADD', '#7F77DD', '#1D9E75']
     }
   ];
 
@@ -73,10 +73,14 @@
     const fragment = document.createDocumentFragment();
     for (let i = 0; i < item.text.length; i++) {
       const span = document.createElement('span');
-      span.textContent = item.text[i];
-      if (item.text[i] !== ' ') {
+
+      if (item.text[i] === ' ') {
+        span.innerHTML = '&nbsp;';
+      } else {
+        span.textContent = item.text[i];
         span.style.color = item.colors[i % item.colors.length];
       }
+
       fragment.appendChild(span);
     }
     textEl.innerHTML = '';
@@ -85,7 +89,7 @@
 
   const DISPLAY_DURATION = 10000;
   const SLIDE_OUT_DURATION = 600;
-  const BETWEEN_DELAY = 400;     
+  const BETWEEN_DELAY = 400;
 
   let currentIndex = 0;
 

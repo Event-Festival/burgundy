@@ -24,7 +24,7 @@
             position: absolute;
             top: 25px;
             right: 355px;
-            width: 350px;
+            width: auto;
             overflow: hidden;
             z-index: 1;
 
