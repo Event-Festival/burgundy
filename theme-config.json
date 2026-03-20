@@ -8,7 +8,7 @@
                 "css": "https://event-festival.github.io/burgundy/newyear/newyear.css",
                 "js": "https://event-festival.github.io/burgundy/newyear/newyear.js",
                 "start": "2026-01-01",
-                "end": "2026-01-10",
+                "end": "2026-04-10",
                 "active": true
             },
             "chinese-newyear": {
@@ -28,7 +28,7 @@
             "songkran": {
                 "css": "https://event-festival.github.io/burgundy/songkran/songkran.css",
                 "js": "https://event-festival.github.io/burgundy/songkran/songkran.js",
-                "start": "2026-03-10",
+                "start": "2026-04-10",
                 "end": "2026-04-15",
                 "active": true
             },
