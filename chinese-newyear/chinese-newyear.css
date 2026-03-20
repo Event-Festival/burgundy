@@ -1,6 +1,9 @@
 .ch_newyear {
-    position: relative;
+    position: fixed;
     z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
 
     .chrom {
         position: absolute;
@@ -15,20 +18,20 @@
 
     .chrom2 {
         top: 1px;
-        left: 37px;
+        left: 100px;
         animation-delay: 3s;
     }
 
     .chrom3 {
         top: 10px;
-        left: 79px;
+        left: 525px;
         width: 1.9rem;
         animation-delay: 1s;
     }
 
     .chrom4 {
         top: 0px;
-        left: 140px;
+        left: 455px;
         width: 2.5rem;
         animation-delay: 5s;
     }
@@ -41,7 +44,7 @@
 
     .chrom6 {
         top: -7px;
-        right: 120px;
+        right: 83px;
         width: 2.5rem;
         animation-delay: 5.2s;
     }
