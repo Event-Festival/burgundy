@@ -23,11 +23,14 @@
   const greeting = document.createElement('div');
   greeting.className = 'greeting-text sm-hide';
 
-  const span = document.createElement('span');
-  span.className = 'typewriter-text';
-  span.id = 'tw-display';
+  const textEl = document.createElement('span');
+  textEl.className = 'typewriter-text';
 
-  greeting.appendChild(span);
+  const cursor = document.createElement('span');
+  cursor.className = 'cursor-blink';
+
+  greeting.appendChild(textEl);
+  greeting.appendChild(cursor);
   top.appendChild(greeting);
 
   top.appendChild(createImg('splash-item-1 sm-hide', 'songkran13.webp'));
@@ -54,9 +57,7 @@
 
   document.body.appendChild(container);
 
-  // typewriter =========================
-
-  const twDisplay = document.getElementById('tw-display');
+  // ================= TYPEWRITER =================
 
   const thisYearAD = new Date().getFullYear();
   const thisYearBE = thisYearAD + 543;
@@ -72,41 +73,64 @@
     }
   ];
 
-  let index = 0;
-  let isDeleting = false;
   let textIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
 
-  const TYPE_SPEED = 120;
-  const DELETE_SPEED = 70;
-  const PAUSE_AFTER_TYPE = 1800;
+  const TYPE_SPEED = 90;
+  const DELETE_SPEED = 50;
+  const PAUSE_AFTER_TYPE = 1600;
   const PAUSE_AFTER_DELETE = 600;
 
-  const colorize = (text, colors) =>
-    text.split('').map((ch, i) =>
-      ch === ' '
-        ? '<span> </span>'
-        : `<span style="color:${colors[i % colors.length]}">${ch}</span>`
-    ).join('');
+  function renderText(text, colors, length) {
+    const fragment = document.createDocumentFragment();
+
+    for (let i = 0; i < length; i++) {
+      const span = document.createElement('span');
+      span.textContent = text[i];
+
+      if (text[i] !== ' ') {
+        span.style.color = colors[i % colors.length];
+        span.style.animationDelay = `${i * 0.02}s`;
+      }
+
+      fragment.appendChild(span);
+    }
+
+    textEl.innerHTML = '';
+    textEl.appendChild(fragment);
+  }
 
   function tick() {
     const current = texts[textIndex];
 
     if (!isDeleting) {
-      index++;
-      twDisplay.innerHTML = colorize(current.text.slice(0, index), current.colors);
+      charIndex++;
+      renderText(current.text, current.colors, charIndex);
 
-      if (index === current.text.length) {
-        isDeleting = true;
-        return setTimeout(tick, PAUSE_AFTER_TYPE);
+      if (charIndex === current.text.length) {
+        cursor.classList.add('pause');
+
+        return setTimeout(() => {
+          cursor.classList.remove('pause');
+          isDeleting = true;
+          tick();
+        }, PAUSE_AFTER_TYPE);
       }
     } else {
-      index--;
-      twDisplay.innerHTML = colorize(current.text.slice(0, index), current.colors);
+      charIndex--;
+      renderText(current.text, current.colors, charIndex);
 
-      if (index === 0) {
+      if (charIndex === 0) {
         isDeleting = false;
         textIndex = (textIndex + 1) % texts.length;
-        return setTimeout(tick, PAUSE_AFTER_DELETE);
+
+        cursor.classList.add('pause');
+
+        return setTimeout(() => {
+          cursor.classList.remove('pause');
+          tick();
+        }, PAUSE_AFTER_DELETE);
       }
     }
 
