@@ -53,9 +53,9 @@
                 "end": "2026-12-25",
                 "active": true
             },
-            "newyear-eve": {
-                "css": "https://event-festival.github.io/burgundy/newyear-eve/newyear-eve.css",
-                "js": "https://event-festival.github.io/burgundy/newyear-eve/newyear-eve.js",
+            "new-year-eve": {
+                "css": "https://event-festival.github.io/burgundy/new-year-eve/new-year-eve.css",
+                "js": "https://event-festival.github.io/burgundy/new-year-eve/new-year-eve.js",
                 "start": "2026-12-30",
                 "end": "2026-12-31",
                 "active": true
@@ -122,9 +122,9 @@
                 "end": "2025-12-25",
                 "active": true
             },
-            "newyear-eve": {
-                "css": "https://event-festival.github.io/burgundy/newyear-eve/newyear-eve.css",
-                "js": "https://event-festival.github.io/burgundy/newyear-eve/newyear-eve.js",
+            "new-year-eve": {
+                "css": "https://event-festival.github.io/burgundy/new-year-eve/new-year-eve.css",
+                "js": "https://event-festival.github.io/burgundy/new-year-eve/new-year-eve.js",
                 "start": "2025-12-30",
                 "end": "2025-12-31",
                 "active": true

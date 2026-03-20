@@ -1,11 +1,19 @@
 (function createSongkranEffect() {
-  if (document.querySelector('.songkran')) return;
+  if (document.querySelector('[data-festival-theme="songkran"]')) return;
 
   const BASE_URL = 'https://event-festival.github.io/burgundy/assets/festivals/songkran/';
 
+  const root = document.createElement('div');
+  root.setAttribute('data-festival-theme', 'songkran');
+  root.style.position = 'fixed';
+  root.style.top = '0';
+  root.style.left = '0';
+  root.style.width = '100%';
+  root.style.pointerEvents = 'none';
+  root.style.zIndex = '9999';
+
   const container = document.createElement('div');
   container.className = 'songkran';
-  container.setAttribute('data-festival-theme', 'songkran');
 
   const top = document.createElement('div');
   top.className = 'songkran-top';
@@ -24,13 +32,9 @@
   greeting.className = 'greeting-text sm-hide';
 
   const textEl = document.createElement('span');
-  textEl.className = 'typewriter-text';
-
-  const cursor = document.createElement('span');
-  cursor.className = 'cursor-blink';
+  textEl.className = 'slide-text';
 
   greeting.appendChild(textEl);
-  greeting.appendChild(cursor);
   top.appendChild(greeting);
 
   top.appendChild(createImg('splash-item-1 sm-hide', 'songkran13.webp'));
@@ -55,87 +59,38 @@
   container.appendChild(gun);
   container.appendChild(coconut);
 
-  document.body.appendChild(container);
-
-  // ================= TYPEWRITER =================
+  root.appendChild(container);
+  document.body.appendChild(root);
 
   const thisYearAD = new Date().getFullYear();
   const thisYearBE = thisYearAD + 543;
 
   const texts = [
-    {
-      text: `HAPPY SONGKRAN DAY ${thisYearAD}!`,
-      colors: ['#378ADD','#1D9E75','#D85A30','#D4537E','#7F77DD','#BA7517','#639922']
-    },
-    {
-      text: `สวัสดีปีใหม่ไทย ${thisYearBE}!`,
-      colors: ['#D85A30','#D4537E','#BA7517','#639922','#378ADD','#7F77DD','#1D9E75']
-    }
+    `HAPPY SONGKRAN DAY ${thisYearAD}!`,
+    `สวัสดีปีใหม่ไทย ${thisYearBE}!`
   ];
 
   let textIndex = 0;
-  let charIndex = 0;
-  let isDeleting = false;
 
-  const TYPE_SPEED = 90;
-  const DELETE_SPEED = 50;
-  const PAUSE_AFTER_TYPE = 1600;
-  const PAUSE_AFTER_DELETE = 600;
+  function showText() {
+    textEl.textContent = texts[textIndex];
 
-  function renderText(text, colors, length) {
-    const fragment = document.createDocumentFragment();
+    textEl.classList.remove('slide-in', 'slide-out');
 
-    for (let i = 0; i < length; i++) {
-      const span = document.createElement('span');
-      span.textContent = text[i];
+    void textEl.offsetWidth;
 
-      if (text[i] !== ' ') {
-        span.style.color = colors[i % colors.length];
-        span.style.animationDelay = `${i * 0.02}s`;
-      }
+    textEl.classList.add('slide-in');
 
-      fragment.appendChild(span);
-    }
+    setTimeout(() => {
+      textEl.classList.remove('slide-in');
+      textEl.classList.add('slide-out');
+    }, 10000);
 
-    textEl.innerHTML = '';
-    textEl.appendChild(fragment);
+    setTimeout(() => {
+      textIndex = (textIndex + 1) % texts.length;
+      showText();
+    }, 10800);
   }
 
-  function tick() {
-    const current = texts[textIndex];
-
-    if (!isDeleting) {
-      charIndex++;
-      renderText(current.text, current.colors, charIndex);
-
-      if (charIndex === current.text.length) {
-        cursor.classList.add('pause');
-
-        return setTimeout(() => {
-          cursor.classList.remove('pause');
-          isDeleting = true;
-          tick();
-        }, PAUSE_AFTER_TYPE);
-      }
-    } else {
-      charIndex--;
-      renderText(current.text, current.colors, charIndex);
-
-      if (charIndex === 0) {
-        isDeleting = false;
-        textIndex = (textIndex + 1) % texts.length;
-
-        cursor.classList.add('pause');
-
-        return setTimeout(() => {
-          cursor.classList.remove('pause');
-          tick();
-        }, PAUSE_AFTER_DELETE);
-      }
-    }
-
-    setTimeout(tick, isDeleting ? DELETE_SPEED : TYPE_SPEED);
-  }
-
-  tick();
+  showText();
 })();

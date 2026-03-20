@@ -1,18 +1,25 @@
 (function createChineseNewYearEffect() {
   // กันซ้อน
-  if (document.querySelector('.ch_newyear')) return;
+  if (document.querySelector('[data-festival-theme="ch_newyear"]')) return;
 
   const BASE_URL = 'https://event-festival.github.io/burgundy/assets/festivals/chinese-newyear/';
 
+  const root = document.createElement('div');
+  root.setAttribute('data-festival-theme', 'ch_newyear');
+  root.style.position = 'fixed';
+  root.style.top = '0';
+  root.style.left = '0';
+  root.style.width = '100%';
+  root.style.pointerEvents = 'none';
+  root.style.zIndex = '9999';
+
   const bgWrapper = document.createElement('div');
   bgWrapper.style.overflow = 'hidden';
-  bgWrapper.setAttribute('data-festival-theme', 'ch_newyear');
   bgWrapper.style.width = '100vw';
 
   const bg = document.createElement('img');
   bg.className = 'ch_newyear_bg';
   bg.src = BASE_URL + 'CH-NewYear01.webp';
-  bg.alt = 'ch_newyear_bg';
 
   bgWrapper.appendChild(bg);
 
@@ -33,8 +40,6 @@
     const img = document.createElement('img');
     img.className = `chrom chrom${index + 1}`;
     img.src = BASE_URL + file;
-    img.alt = 'chrom';
-
     chromContainer.appendChild(img);
   });
 
@@ -50,12 +55,13 @@
   const fruit = document.createElement('img');
   fruit.className = 'fruit fruit1';
   fruit.src = BASE_URL + 'CH-NewYear08.webp';
-  fruit.alt = 'fruit';
 
   wrapper.appendChild(fruit);
   river.appendChild(wrapper);
 
-  document.body.appendChild(bgWrapper);
-  document.body.appendChild(chromContainer);
-  document.body.appendChild(river);
+  root.appendChild(bgWrapper);
+  root.appendChild(chromContainer);
+  root.appendChild(river);
+
+  document.body.appendChild(root);
 })();
