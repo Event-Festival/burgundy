@@ -123,7 +123,7 @@
   content: '';
   position: absolute;
   bottom: 8px;
-  left: 55px;
+  left: 67px;
   width: 5px;
   height: 5px;
   border-radius: 50%;
@@ -133,7 +133,7 @@
   content: '';
   position: absolute;
   bottom: 18px;
-  left: 55px;
+  left: 67px;
   width: 5px;
   height: 5px;
   border-radius: 50%;
@@ -146,7 +146,7 @@
   height: 30px;
   margin: 0px 5px 0px 0px;
   border-radius: 4px;
-  font-size: 1.8rem;
+  font-size: 4rem;
   text-align: center;
   perspective: 200px;
 }

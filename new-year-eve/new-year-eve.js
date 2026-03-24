@@ -28,7 +28,7 @@ var FlipDown = function () {
     if (!container) {
       container = document.createElement('div');
       container.id = el;
-      container.className = 'flipdown sm-hide';
+      container.className = 'flipdown';
       container.setAttribute('data-festival-theme', 'flipdown');
       if (document.body) {
         document.body.appendChild(container);
@@ -286,3 +286,12 @@ function appendChildren(parent, children) {
     parent.appendChild(el);
   });
 }
+
+(function () {
+  var newYearEve = new Date('2026-12-31T00:00:00').getTime() / 1000;
+  new FlipDown(newYearEve, 'flipdown', { theme: 'dark' })
+    .start()
+    .ifEnded(function () {
+      console.log('New Year Eve countdown ended!');
+    });
+})();
