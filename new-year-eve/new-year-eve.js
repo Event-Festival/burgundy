@@ -9,16 +9,6 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
 var FlipDown = function () {
-  
-  let container = document.createElement('div');
-  container.id = 'flipdown';
-  container.className = 'flipdown sm-hide';
-  container.setAttribute('data-festival-theme', 'flipdown');
-
-  if (document.body) {
-    document.body.appendChild(container);
-  }
-
   function FlipDown(uts) {
     var el = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "flipdown";
     var opt = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
@@ -34,13 +24,24 @@ var FlipDown = function () {
       el = "flipdown";
     }
 
+    let container = document.getElementById(el);
+    if (!container) {
+      container = document.createElement('div');
+      container.id = el;
+      container.className = 'flipdown sm-hide';
+      container.setAttribute('data-festival-theme', 'flipdown');
+      if (document.body) {
+        document.body.appendChild(container);
+      }
+    }
+
     this.version = "0.3.2";
     this.initialised = false;
     this.now = this._getTime();
     this.epoch = uts;
     this.countdownEnded = false;
     this.hasEndedCallback = null;
-    this.element = document.getElementById(el);
+    this.element = container;
     this.rotors = [];
     this.rotorLeafFront = [];
     this.rotorLeafRear = [];
