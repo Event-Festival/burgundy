@@ -70,7 +70,7 @@
 
 .flipdown {
     overflow: visible;
-    width: 330px;
+    width: max-content;;
     position: absolute;
     z-index: 1;
     right: 50%;
