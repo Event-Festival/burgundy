@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@700;800&display=swap');
+
+.songkran-preview {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 30%, #fbc2eb 70%, #fff1eb 100%);
+    overflow: hidden;
+}
+
+.songkran-preview.zoom-active {
+    animation: spFadeOut 1.5s ease forwards;
+}
+
+.songkran-preview.zoom-active .sp-zoom-content {
+    animation: spZoomThrough 1.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) forwards;
+}
+
+.songkran-preview.zoom-active .sp-zoom-content * {
+    animation-play-state: paused !important;
+}
+
+.sp-zoom-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-origin: center center;
+}
+
+.sp-zoom-content img {
+    position: absolute;
+    transform: scale(0.2);
+    opacity: 0;
+}
+
+.sp-water-show1 {
+    left: 15%;
+    top: 10%;
+}
+
+.sp-water-show2 {
+    right: 15%;
+    top: 10%;
+}
+
+.sp-water-show3 {
+    left: 5%;
+    top: 40%;
+}
+
+.sp-water-show4 {
+    right: 5%;
+    top: 40%;
+}
+
+.sp-water-show5 {
+    left: 15%;
+    bottom: 10%;
+}
+
+.sp-water-show6 {
+    right: 15%;
+    bottom: 10%;
+}
+
+.sp-central-greeting {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    position: relative;
+}
+
+.sp-central-greeting .sp-water-show7 {
+    opacity: 0;
+    position: absolute;
+    width: 700px;
+}
+
+.sp-title {
+    position: absolute;
+    z-index: 4;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    color: white;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.2), 0 0 20px #ff007f, 0 0 40px #ffca28;
+}
+
+.sp-letter {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(50px);
+    font-family: 'Kanit', sans-serif;
+    font-size: 100px;
+    font-weight: 800;
+}
+
+.sp-letter.sp-space {
+    width: 0.3em;
+}
+
+
+.sp-zoom-content.ready .sp-water-show1 {
+    animation:
+        spPopIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1.0s forwards,
+        spFloat 4.0s ease-in-out 1.6s infinite;
+}
+
+.sp-zoom-content.ready .sp-water-show2 {
+    animation:
+        spPopIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1.1s forwards,
+        spFloat 3.5s ease-in-out 1.7s infinite alternate;
+}
+
+.sp-zoom-content.ready .sp-water-show3 {
+    animation:
+        spPopIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1.2s forwards,
+        spFloat 4.2s ease-in-out 1.8s infinite;
+}
+
+.sp-zoom-content.ready .sp-water-show4 {
+    animation:
+        spPopIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1.3s forwards,
+        spFloat 3.8s ease-in-out 1.9s infinite alternate;
+}
+
+.sp-zoom-content.ready .sp-water-show5 {
+    animation:
+        spPopIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1.4s forwards,
+        spFloat 4.5s ease-in-out 2.0s infinite;
+}
+
+.sp-zoom-content.ready .sp-water-show6 {
+    animation:
+        spPopIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1.5s forwards,
+        spFloat 4.0s ease-in-out 2.1s infinite alternate;
+}
+
+.sp-zoom-content.ready .sp-water-show7 {
+    animation:
+        spPopIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1.8s forwards,
+        spHeartbeat 3s ease-in-out 2.6s infinite;
+}
+
+.sp-zoom-content.ready .sp-letter {
+    animation: spLetterUp 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+
+@keyframes spPopIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes spFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) scale(1);
+    }
+
+    50% {
+        transform: translateY(-15px) scale(1.02);
+    }
+}
+
+@keyframes spHeartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes spLetterUp {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes spZoomThrough {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(15);
+        opacity: 0;
+    }
+}
+
+@keyframes spFadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}

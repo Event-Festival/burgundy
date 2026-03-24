@@ -10,6 +10,7 @@
 
   const THEME_STORAGE_KEYS = {
     'newyear': ['newYearShow'],
+    'songkran-preview': ['viewed_songkran'],
   };
 
   // LocalStorage Control
