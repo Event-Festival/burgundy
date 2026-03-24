@@ -56,7 +56,7 @@
             "christmas": {
                 "css": "https://event-festival.github.io/burgundy/christmas/christmas.css",
                 "js": "https://event-festival.github.io/burgundy/christmas/christmas.js",
-                "start": "2026-02-20",
+                "start": "2026-12-20",
                 "end": "2026-12-25",
                 "active": true
             },
