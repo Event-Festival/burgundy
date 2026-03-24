@@ -51,21 +51,37 @@
 
   // Load Resource
 
-  function loadCSS(href) {
-    if (document.querySelector(`link[href="${href}"]`)) return;
+  function bustURL(url, version) {
+    return version ? `${url}?v=${version}` : url;
+  }
+
+  function loadCSS(href, version) {
+    const fullHref = bustURL(href, version);
+    if (document.querySelector(`link[href="${fullHref}"]`)) return;
+
+    // Remove old version
+    document.querySelectorAll('link[data-festival="true"]').forEach(el => {
+      if (el.href && el.href.split('?')[0] === href) el.remove();
+    });
 
     const link = document.createElement('link');
     link.rel = 'stylesheet';
-    link.href = href;
+    link.href = fullHref;
     link.setAttribute('data-festival', 'true');
     document.head.appendChild(link);
   }
 
-  function loadJS(src, key) {
-    if (document.querySelector(`script[src="${src}"]`)) return;
+  function loadJS(src, key, version) {
+    const fullSrc = bustURL(src, version);
+    if (document.querySelector(`script[src="${fullSrc}"]`)) return;
+
+    // Remove old version
+    document.querySelectorAll('script[data-festival="true"]').forEach(el => {
+      if (el.src && el.src.split('?')[0] === src) el.remove();
+    });
 
     const script = document.createElement('script');
-    script.src = src;
+    script.src = fullSrc;
     script.defer = true;
     script.setAttribute('data-theme', key);
     script.setAttribute('data-festival', 'true');
@@ -101,6 +117,7 @@
       return;
     }
 
+    const version = config.version || '';
     const currentYear = new Date().getFullYear().toString();
     const event = config.events.find(e => e.year === currentYear);
     if (!event) return;
@@ -115,8 +132,8 @@
       if (isInRange(theme.start, theme.end)) {
         if (loadedThemes.has(key)) return;
 
-        loadCSS(theme.css);
-        loadJS(theme.js, key);
+        loadCSS(theme.css, version);
+        loadJS(theme.js, key, version);
 
         loadedThemes.add(key);
       } else {
@@ -169,7 +186,7 @@
       return;
     }
 
-    fetch(CONFIG_URL)
+    fetch(CONFIG_URL, { cache: 'no-store' })
       .then(res => res.json())
       .then(data => {
         cachedConfig = data;

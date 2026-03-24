@@ -28,7 +28,7 @@ var FlipDown = function () {
     if (!container) {
       container = document.createElement('div');
       container.id = el;
-      container.className = 'flipdown';
+      container.className = 'flipdown sm-hide';
       container.setAttribute('data-festival-theme', 'flipdown');
       if (document.body) {
         document.body.appendChild(container);
