@@ -13,6 +13,7 @@
   root.style.width = '100%';
   root.style.pointerEvents = 'none';
   root.style.zIndex = '9999';
+  root.style.height = '100%';
 
   const bgWrapper = document.createElement('div');
   bgWrapper.style.overflow = 'hidden';
