@@ -49,14 +49,14 @@
             "loy-krathong": {
                 "css": "https://event-festival.github.io/burgundy/loy-krathong/loy-krathong.css",
                 "js": "https://event-festival.github.io/burgundy/loy-krathong/loy-krathong.js",
-                "start": "2026-01-25",
+                "start": "2026-11-25",
                 "end": "2026-11-30",
                 "active": true
             },
             "christmas": {
                 "css": "https://event-festival.github.io/burgundy/christmas/christmas.css",
                 "js": "https://event-festival.github.io/burgundy/christmas/christmas.js",
-                "start": "2026-12-20",
+                "start": "2026-02-20",
                 "end": "2026-12-25",
                 "active": true
             },
