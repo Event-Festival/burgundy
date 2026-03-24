@@ -7,15 +7,15 @@
             "newyear": {
                 "css": "https://event-festival.github.io/burgundy/newyear/newyear.css",
                 "js": "https://event-festival.github.io/burgundy/newyear/newyear.js",
-                "start": "2026-03-01",
-                "end": "2026-03-30",
+                "start": "2026-01-01",
+                "end": "2026-01-10",
                 "active": true
             },
             "chinese-newyear": {
                 "css": "https://event-festival.github.io/burgundy/chinese-newyear/chinese-newyear.css",
                 "js": "https://event-festival.github.io/burgundy/chinese-newyear/chinese-newyear.js",
-                "start": "2026-01-16",
-                "end": "2026-01-20",
+                "start": "2026-03-16",
+                "end": "2026-03-20",
                 "active": true
             },
             "valentine": {
