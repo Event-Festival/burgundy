@@ -14,15 +14,15 @@
             "chinese-newyear": {
                 "css": "https://event-festival.github.io/burgundy/chinese-newyear/chinese-newyear.css",
                 "js": "https://event-festival.github.io/burgundy/chinese-newyear/chinese-newyear.js",
-                "start": "2026-03-16",
-                "end": "2026-03-30",
+                "start": "2026-01-16",
+                "end": "2026-01-20",
                 "active": true
             },
             "valentine": {
                 "css": "https://event-festival.github.io/burgundy/valentine/valentine.css",
                 "js": "https://event-festival.github.io/burgundy/valentine/valentine.js",
                 "start": "2026-02-14",
-                "end": "2026-02-14",
+                "end": "2026-04-14",
                 "active": true
             },
             "songkran": {
