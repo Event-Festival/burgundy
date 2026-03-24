@@ -7,8 +7,8 @@
             "newyear": {
                 "css": "https://event-festival.github.io/burgundy/newyear/newyear.css",
                 "js": "https://event-festival.github.io/burgundy/newyear/newyear.js",
-                "start": "2026-01-01",
-                "end": "2026-01-10",
+                "start": "2026-03-01",
+                "end": "2026-03-30",
                 "active": true
             },
             "chinese-newyear": {
