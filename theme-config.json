@@ -22,13 +22,13 @@
                 "css": "https://event-festival.github.io/burgundy/valentine/valentine.css",
                 "js": "https://event-festival.github.io/burgundy/valentine/valentine.js",
                 "start": "2026-02-14",
-                "end": "2026-04-14",
+                "end": "2026-02-14",
                 "active": true
             },
             "songkran": {
                 "css": "https://event-festival.github.io/burgundy/songkran/songkran.css",
                 "js": "https://event-festival.github.io/burgundy/songkran/songkran.js",
-                "start": "2026-04-08",
+                "start": "2026-01-08",
                 "end": "2026-04-15",
                 "active": true
             },
