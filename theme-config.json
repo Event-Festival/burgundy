@@ -28,21 +28,21 @@
             "songkran": {
                 "css": "https://event-festival.github.io/burgundy/songkran/songkran.css",
                 "js": "https://event-festival.github.io/burgundy/songkran/songkran.js",
-                "start": "2026-01-08",
+                "start": "2026-04-08",
                 "end": "2026-04-15",
                 "active": true
             },
             "songkran-preview": {
                 "css": "https://event-festival.github.io/burgundy/songkran-preview/songkran-preview.css",
                 "js": "https://event-festival.github.io/burgundy/songkran-preview/songkran-preview.js",
-                "start": "2026-01-08",
+                "start": "2026-04-12",
                 "end": "2026-04-15",
                 "active": true
             },
             "halloween": {
                 "css": "https://event-festival.github.io/burgundy/halloween/halloween.css",
                 "js": "https://event-festival.github.io/burgundy/halloween/halloween.js",
-                "start": "2026-10-30",
+                "start": "2026-01-30",
                 "end": "2026-10-31",
                 "active": true
             },
