@@ -42,14 +42,14 @@
             "halloween": {
                 "css": "https://event-festival.github.io/burgundy/halloween/halloween.css",
                 "js": "https://event-festival.github.io/burgundy/halloween/halloween.js",
-                "start": "2026-01-30",
+                "start": "2026-10-30",
                 "end": "2026-10-31",
                 "active": true
             },
             "loy-krathong": {
                 "css": "https://event-festival.github.io/burgundy/loy-krathong/loy-krathong.css",
                 "js": "https://event-festival.github.io/burgundy/loy-krathong/loy-krathong.js",
-                "start": "2026-11-25",
+                "start": "2026-01-25",
                 "end": "2026-11-30",
                 "active": true
             },
