@@ -71,7 +71,7 @@
             "winter": {
                 "css": "https://event-festival.github.io/burgundy/winter/winter.css",
                 "js": "https://event-festival.github.io/burgundy/winter/winter.js",
-                "start": "2026-01-20",
+                "start": "2026-11-20",
                 "end": "2027-01-31",
                 "active": true
             }
