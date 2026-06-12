@@ -1,0 +1,104 @@
+.worldcup {
+	overflow: hidden;
+
+	.worldcup_ball {
+		.ball {
+			position: absolute;
+			width: 40px;
+			z-index: 1;
+			animation: float 4s ease-in-out infinite;
+		}
+
+		.ball1 {
+			position: absolute;
+			right: 333px;
+			width: 42px;
+			z-index: 1;
+		}
+
+		.ball2 {
+			left: 235px;
+			animation-delay: 2s;
+		}
+
+		.ball3 {
+			left: 400px;
+			width: 30px;
+			top: -9px;
+		}
+
+		.ball4 {
+			left: 500px;
+			top: 5px;
+			width: 20px;
+			animation-delay: 1s;
+		}
+
+		.ball5 {
+			right: 15px;
+			width: 20px;
+		}
+
+		.ball7 {
+			right: 100px;
+			width: 30px;
+			animation-delay: 3s;
+		}
+	}
+
+	.worldcup_bg {
+		position: absolute;
+		opacity: 0.09;
+		bottom: 0;
+		z-index: -1000;
+        width: 100%;
+	}
+
+	
+	.worldcup_home {
+		width: 50px;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		z-index: -1000;
+		overflow: hidden;
+	}
+
+	.worldcup_bt {
+		width: 50px;
+		height: 100px;
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		z-index: 1;
+		overflow: hidden;
+	}
+	.curve {
+	    position: absolute;
+        width: 45px;
+        bottom: 0;
+        right: 0;
+        z-index: 1;
+		animation: float 4s ease-in-out infinite;
+	}
+}
+
+@media screen and (max-width: 480px) {
+  .worldcup_ball {
+    display: none;
+  }
+}
+
+@keyframes float {
+	0% {
+		transform: translateY(10px);
+	}
+
+	50% {
+		transform: translateY(0px);
+	}
+
+	100% {
+		transform: translateY(10px);
+	}
+}

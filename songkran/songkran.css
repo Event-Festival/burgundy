@@ -116,8 +116,8 @@
     }
 
     .scenery-bottom {
-        width: 300px;
-        height: 85px;
+        width: 195px;
+        height: 60px;
         position: absolute;
         bottom: 0;
         right: 0;
@@ -156,7 +156,7 @@
         height: 40px;
         position: absolute;
         bottom: 0;
-        right: 290px;
+        right: 185px;
         z-index: 1;
         overflow: hidden;
     }
