@@ -12,7 +12,7 @@
   ballContainer.className = 'worldcup_ball';
 
   const balls = [
-    { cls: 'ball1', file: 'world-cup04.webp', alt: 'Curve1' },
+    { cls: 'ball1', file: 'world-cup06.webp', alt: 'Curve1' },
     { cls: 'ball2', file: 'world-cup01.webp', alt: 'Curve2' },
     { cls: 'ball3', file: 'world-cup02.webp', alt: 'Curve3' },
     { cls: 'ball4', file: 'world-cup01.webp', alt: 'Curve4' },
