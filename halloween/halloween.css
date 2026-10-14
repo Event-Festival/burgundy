@@ -25,6 +25,10 @@
 			left: 400px;
 			width: 30px;
 			top: -9px;
+
+			@media (max-width: 768px) {
+				display: none;
+			}
 		}
 
 		.bat4 {
@@ -32,6 +36,10 @@
 			top: 5px;
 			width: 20px;
 			animation-delay: 1s;
+
+			@media (max-width: 768px) {
+				display: none;
+			}
 		}
 
 		.bat5 {
@@ -43,6 +51,10 @@
 			right: 100px;
 			width: 30px;
 			animation-delay: 3s;
+
+			@media (max-width: 768px) {
+				display: none;
+			}
 		}
 
 		.spider {
@@ -51,6 +63,10 @@
 			top: -50px;
 			left: -50px;
 			z-index: 1;
+
+			@media (max-width: 768px) {
+				display: none;
+			}
 		}
 	}
 
@@ -61,7 +77,7 @@
 		z-index: -1000;
 	}
 
-	
+
 	.halloween_home {
 		width: 50px;
 		position: absolute;
@@ -80,6 +96,7 @@
 		z-index: 1;
 		overflow: hidden;
 	}
+
 	.curve {
 		position: absolute;
 		width: 50px;
@@ -87,6 +104,10 @@
 		right: 0;
 		z-index: 1;
 		animation: float 4s ease-in-out infinite;
+
+		@media (max-width: 768px) {
+			display: none;
+		}
 	}
 }
 
